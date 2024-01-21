@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&family=Inter:wght@400;500&family=Roboto:wght@400;500&display=swap");
 :root {
   --primaryColor: #fff;
   --navColor1: #21292c;
@@ -5,6 +6,9 @@
   --navColor3: #495057ff;
   --navColor4: #343a40ff;
   --navColor5: #495057ff;
+  --headingFont: "Dosis", sans-serif;
+  --bodyFont: "Inter", sans-serif;
+  --navFont: "Dosis", sans-serif;
 }
 /* CSS HEX */
 
@@ -54,6 +58,7 @@ body {
 /* Nav Menu Items */
 nav,
 nav ul {
+  display: none;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -63,6 +68,7 @@ nav ul {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
+
   list-style: none;
 }
 
@@ -76,9 +82,9 @@ nav li a {
   top: 45%;
   color: #fff;
   text-transform: uppercase;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  line-height: 1.25;
+  font-family: var(--navFont);
+  font-size: 700;
+  line-height: 0;
   font-size: 3rem;
   letter-spacing: 4px;
   text-decoration: none;
@@ -182,16 +188,25 @@ nav li:nth-of-type(5) {
   z-index: 100;
   display: inline;
   cursor: pointer;
+  transform: rotate(180deg);
 }
 
 .bar1,
-.bar2,
 .bar3 {
   width: 35px;
   height: 2px;
   background-color: #fff;
   margin: 8px 0;
   transition: 0.25s;
+}
+
+.bar2 {
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  margin: 8px 0;
+  transition: 0.25s;
+  align-self: flex-end;
 }
 
 /* Rotate first bar */
