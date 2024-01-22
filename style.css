@@ -39,7 +39,7 @@ body {
   z-index: 100;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 90vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(4px);
@@ -58,8 +58,9 @@ body {
 /* Nav Menu Items */
 nav,
 nav ul {
-  display: none;
+  /* display: none; */
   height: 100vh;
+  /* width: 90%; */
   margin: 0;
   padding: 0;
 }
@@ -110,7 +111,7 @@ nav li a:hover::before {
   opacity: 1;
 }
 
-nav li:nth-of-type(1) {
+/* nav li:nth-of-type(1) {
   background-color: var(--navColor1);
 }
 nav li:nth-of-type(2) {
@@ -125,10 +126,10 @@ nav li:nth-of-type(4) {
 
 nav li:nth-of-type(5) {
   background-color: var(--navColor5);
-}
+} */
 
 /* Slide in animation delay for each nav item */
-.slide-in-1 {
+/* .slide-in-1 {
   animation: slide-in 0.2s linear 0.1s both;
 }
 .slide-in-2 {
@@ -151,7 +152,7 @@ nav li:nth-of-type(5) {
   to {
     transform: translateX(0);
   }
-}
+} */
 
 /* Slide out animation delay for each nav item */
 
@@ -206,7 +207,6 @@ nav li:nth-of-type(5) {
   background-color: #fff;
   margin: 8px 0;
   transition: 0.25s;
-  align-self: flex-end;
 }
 
 /* Rotate first bar */
