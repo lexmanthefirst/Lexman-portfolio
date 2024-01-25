@@ -10,21 +10,7 @@
   --bodyFont: "Inter", sans-serif;
   --navFont: "Dosis", sans-serif;
 }
-/* CSS HEX */
 
-/* --seasalt: #f8f9faff;
---antiflash-white: #e9ecefff;
---platinum: #dee2e6ff;
---french-gray: #ced4daff;
---french-gray-2: #adb5bdff;
---slate-gray: #6c757dff;
---outer-space: #495057ff;
---onyx: #343a40ff;
---eerie-black: #212529ff; 
---navColor3: #797979;
---navColor4: #8d8d8d;
---navColor5: #b4b4b4;
-*/
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -42,7 +28,7 @@ body {
   z-index: 100;
   top: 0;
   left: 0;
-  width: 90vw;
+  width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(4px);
