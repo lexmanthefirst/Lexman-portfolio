@@ -46,6 +46,7 @@ body {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   transform: translateX(-100vw);
 }
 
@@ -87,9 +88,9 @@ nav li a {
   color: #4b4b4b;
   text-transform: uppercase;
   font-family: "Bakbak One", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 0;
-  font-size: 4rem;
+  font-size: 3.8rem;
   letter-spacing: 4px;
   text-decoration: none;
   display: block;
