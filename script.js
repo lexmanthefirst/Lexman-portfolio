@@ -58,8 +58,10 @@ navArr.forEach((nav) => {
   nav.addEventListener("click", function () {
     if (selectedNav !== null) {
       selectedNav.style.color = ""; // Set the initial color
+      selectedNav.style.filter = ""; // Set the initial filter
     }
     nav.style.color = "#fff"; // Set the white color
+    nav.style.filter = "drop-shadow(0 0 0.75rem #0000)"; // Set the shadow
     selectedNav = nav; // Update the selected nav item
   });
 });
