@@ -20,8 +20,19 @@ body {
   margin: 0;
   background: #000;
 }
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+header a{
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
 
-/* --- Navigation Menu ------------------------------ */
 /* Overlay */
 .overlay {
   position: fixed;
@@ -117,6 +128,25 @@ nav li:nth-of-type(5) {
 .slide-out-5 {
   animation: slide-out 0.3s linear 0.1s both;
 }
+  /* Theme toggle */
+  .theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+  }
+  
+  #theme-btn {
+    background: var(--card-bg);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
 
 @keyframes slide-out {
   from {
@@ -126,13 +156,13 @@ nav li:nth-of-type(5) {
     transform: translateX(-100%);
   }
 }
-/* --- Menu Bars ------------------------------------ */
+/* --------------------------- Menu Bars --------------------------- */
 
 .menu-bars {
   position: fixed;
   top: 1rem;
   right: 2rem;
-  z-index: 100;
+  z-index: 999;
   display: inline;
   cursor: pointer;
   transform: rotate(180deg);
@@ -140,15 +170,15 @@ nav li:nth-of-type(5) {
 
 .bar1,
 .bar3 {
-  width: 35px;
-  height: 2px;
+  width: 25px;
+    height: 2px;
   background-color: #fff;
   margin: 8px 0;
   transition: 0.25s;
 }
 
 .bar2 {
-  width: 25px;
+  width: 15px;
   height: 2px;
   background-color: #fff;
   margin: 8px 0;
@@ -176,37 +206,15 @@ nav li:nth-of-type(5) {
   transform: rotate(45deg) translate(-6px, -8px);
 }
 
-/* --- Sections ------------------------------------ */
+/* ------------------------------ Sections -------------------------------- */
 
 section {
   width: 100%;
   height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--primaryColor);
+
 }
 
-section#home {
-  background-image: url("https://images.unsplash.com/photo-1581453904507-626ddb717f14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80");
-  background-size: cover;
-  background-position: center center;
-}
 
-section#home a {
-  position: absolute;
-  z-index: 2;
-  top: 1.5rem;
-  left: 1.5rem;
-  text-decoration: none;
-  font-size: 0.8rem;
-  padding-bottom: 5px;
-  color: var(--primaryColor);
-  border-bottom: 1px solid var(--primaryColor);
-}
 
 section#about {
   background-color: var(--navColor2);
@@ -225,14 +233,62 @@ section#contact {
 }
 
 /* Media Query: Large Smartphone (Vertical) */
-@media (max-width: 600px) {
-  section#home a {
-    top: 1rem;
-    left: 1rem;
-  }
+@media (max-width: 37.5em) {
 
   .menu-bars {
     top: 0.5rem;
     right: 1rem;
+  }
+
+}
+@media only screen and (min-width: 48em) {
+  .overlay {
+    position: static;
+    background: none;
+    transform: none;
+    backdrop-filter: none;
+    height: auto; 
+  }
+  
+  nav {
+    height: auto;
+    margin: 0; 
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; 
+    align-items: center; 
+    gap: 2rem; 
+    padding: 0 2rem; 
+    height: 60px;
+  }
+
+  nav ul li {
+    height: auto !important; 
+    overflow: visible !important;
+  }
+
+  nav li a {
+    position: static;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    line-height: normal;
+    color: #fff !important; 
+    transition: all 0.3s ease;
+  }
+
+  nav li a:hover {
+    transform: scale(1.05);
+    color: #ccc !important;
+  }
+
+  /* Remove mobile animations */
+  .slide-out-1, .slide-out-2, .slide-out-3, .slide-out-4, .slide-out-5 {
+    animation: none !important;
+  }
+  .menu-bars{
+    display: none;
   }
 }

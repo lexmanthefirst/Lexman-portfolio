@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lexman | Dev</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Inter:wght@400;500;600&family=Montserrat&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <meta name="description" content="Porfolio website for Lexman">
-  <meta name="author" content="Okhitoya Alex">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/script.js" defer></script>
 </head>
-
 <body>
-  <!-- Menu Overlay -->
+
+  <header>
+    <a href="#home">Lexman</a>
+    <div class="menu-bars" id="menu-bars">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+
+    
   <div class="overlay overlay-slide-left" id="overlay">
-    <!-- Menu Items -->
     <nav>
-      <ul class="nav_container">
+      <ul class="menuLinks">
         <li id="nav-1" class="slide-out-1 nav"><a href="#home" class="nav_text">Home</a></li>
         <li id="nav-2" class="slide-out-2 nav"><a href="#about" class="nav_text">About</a></li>
         <li id="nav-3" class="slide-out-3 nav"><a href="#skills" class="nav_text">Skills</a></li>
@@ -30,17 +29,14 @@
       </ul>
     </nav>
   </div>
-  <!-- Menu Bars -->
-  <div class="menu-bars" id="menu-bars">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
-  </div>
+  </header>
+
+ 
+<main>
   <!-- Sections -->
-  <section id="home"><a href="#home" target="_blank">Lexman</a>
+  <section id="home">
     <h1>LEXMAN</h1>
   </section>
-
   <section id="about">
     <h1>Learn More About Me</h1>
   </section>
@@ -53,8 +49,11 @@
   <section id="contact">
     <h1>Available Anytime</h1>
   </section>
-  <!-- Script -->
-  <script src="script.js"></script>
-</body>
+</main>
 
+<div class="theme-toggle">
+  <button id="theme-btn" aria-label="Toggle theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
+</div>
+
+</body>
 </html>

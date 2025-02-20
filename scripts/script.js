@@ -43,12 +43,6 @@ navItems.forEach((nav) => {
   nav.addEventListener("click", toggleNav);
 });
 
-// function navColorClicked() {
-//   navItems.forEach((nav) => {
-//     nav.style.color = "#fff";
-//   });
-// }
-// nav.addEventListener("click", navColorClicked);
 
 const navArr = Array.from(nav);
 
