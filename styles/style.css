@@ -1,14 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Bakbak+One&family=Dosis:wght@400;500;600;700&family=Inter:wght@400;500&family=Roboto:wght@400;500&display=swap");
 :root {
-  --primaryColor: #fff;
-  --navColor1: #4b4b4b;
-  --navColor2: #525252;
-  --navColor3: #4b4b4b;
-  --navColor4: #525252;
-  --navColor5: #4b4b4b;
-  --headingFont: "Dosis", sans-serif;
-  --bodyFont: "Inter", sans-serif;
-  --navFont: "Dosis", sans-serif;
+  --bg-color: #ffffff;
+  --text-color: #121212;
+  --primary-color: #292929;
+  --secondary-color: #757575;
+  --accent-color: #ffae00;
+  --menu-bar-bg: #000;
+  --heading-font: "Dosis", sans-serif;
+  --paragraph-font: "Inter", sans-serif;
+  --card-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  --card-bg: #ffffff;
+  --nav-active-color: #fff;
+  --nav-inactive-color: #757575;
+  --nav-active-shadow: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.1));
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #292929;
+  --secondary-color: #757575;
+  --accent-color: #ffae00;
+  --menu-bar-bg: #fff;
+  --card-bg: linear-gradient(to right, #141e30, #243b55);
+  --nav-active-color: #757575;
+  --nav-inactive-color: #e0e0e0;
+  --nav-active-shadow: drop-shadow(0 0 0.75rem rgba(255, 255, 255, 0.1));
 }
 
 html {
@@ -18,19 +35,25 @@ html {
 
 body {
   margin: 0;
-  background: #000;
+  background: var(--bg-color);
+  transition: background 0.3s ease, color 0.3s ease;
 }
-header{
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
 }
-header a{
+header a {
+  font-family: "Bakbak One", sans-serif;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--text-color);
   font-size: 1.2rem;
   text-decoration: none;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  line-height: normal;
+  font-weight: 600;
 }
 
 /* Overlay */
@@ -80,7 +103,7 @@ nav ul li {
 nav li a {
   position: relative;
   top: 45%;
-  color: #4b4b4b;
+  color: var(--text-color);
   text-transform: uppercase;
   font-family: "Bakbak One", sans-serif;
   font-weight: 600;
@@ -128,25 +151,6 @@ nav li:nth-of-type(5) {
 .slide-out-5 {
   animation: slide-out 0.3s linear 0.1s both;
 }
-  /* Theme toggle */
-  .theme-toggle {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-  }
-  
-  #theme-btn {
-    background: var(--card-bg);
-    border: none;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    box-shadow: var(--card-shadow);
-    backdrop-filter: blur(8px);
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
-  
 
 @keyframes slide-out {
   from {
@@ -171,8 +175,8 @@ nav li:nth-of-type(5) {
 .bar1,
 .bar3 {
   width: 25px;
-    height: 2px;
-  background-color: #fff;
+  height: 2px;
+  background-color: var(--menu-bar-bg);
   margin: 8px 0;
   transition: 0.25s;
 }
@@ -180,7 +184,7 @@ nav li:nth-of-type(5) {
 .bar2 {
   width: 15px;
   height: 2px;
-  background-color: #fff;
+  background-color: var(--menu-bar-bg);
   margin: 8px 0;
   transition: 0.25s;
 }
@@ -211,10 +215,7 @@ nav li:nth-of-type(5) {
 section {
   width: 100%;
   height: 100vh;
-
 }
-
-
 
 section#about {
   background-color: var(--navColor2);
@@ -232,14 +233,34 @@ section#contact {
   background-color: var(--navColor5);
 }
 
+/* Theme toggle */
+.theme-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+#theme-btn {
+  background: var(--primary-color);
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Media Query: Large Smartphone (Vertical) */
 @media (max-width: 37.5em) {
-
   .menu-bars {
     top: 0.5rem;
     right: 1rem;
   }
-
 }
 @media only screen and (min-width: 48em) {
   .overlay {
@@ -247,26 +268,26 @@ section#contact {
     background: none;
     transform: none;
     backdrop-filter: none;
-    height: auto; 
+    height: auto;
   }
-  
+
   nav {
     height: auto;
-    margin: 0; 
+    margin: 0;
   }
 
   nav ul {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end; 
-    align-items: center; 
-    gap: 2rem; 
-    padding: 0 2rem; 
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 2rem;
     height: 60px;
   }
 
   nav ul li {
-    height: auto !important; 
+    height: auto !important;
     overflow: visible !important;
   }
 
@@ -275,7 +296,7 @@ section#contact {
     font-size: 1.2rem;
     letter-spacing: 1px;
     line-height: normal;
-    color: #fff !important; 
+    color: var(--text-color) !important;
     transition: all 0.3s ease;
   }
 
@@ -285,10 +306,26 @@ section#contact {
   }
 
   /* Remove mobile animations */
-  .slide-out-1, .slide-out-2, .slide-out-3, .slide-out-4, .slide-out-5 {
+  .slide-out-1,
+  .slide-out-2,
+  .slide-out-3,
+  .slide-out-4,
+  .slide-out-5 {
     animation: none !important;
   }
-  .menu-bars{
+  .menu-bars {
     display: none;
+  }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: none;
+    padding: 0.75rem 1rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
 }

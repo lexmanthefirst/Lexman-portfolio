@@ -43,19 +43,87 @@ navItems.forEach((nav) => {
   nav.addEventListener("click", toggleNav);
 });
 
-
-const navArr = Array.from(nav);
+const navArr = Array.from(nav); // Update selector to match your nav items
 
 let selectedNav = null;
 
 navArr.forEach((nav) => {
   nav.addEventListener("click", function () {
     if (selectedNav !== null) {
-      selectedNav.style.color = ""; // Set the initial color
-      selectedNav.style.filter = ""; // Set the initial filter
+      selectedNav.style.color = "";
+      selectedNav.style.filter = "";
     }
-    nav.style.color = "#fff"; // Set the white color
-    nav.style.filter = "drop-shadow(0 0 0.75rem #0000)"; // Set the shadow
-    selectedNav = nav; // Update the selected nav item
+    nav.style.color = "var(--nav-active-color)";
+    nav.style.filter = "var(--nav-active-shadow)";
+    selectedNav = nav;
   });
 });
+
+const darkMode = () => {
+  const themeBtn = document.getElementById("theme-btn");
+  const root = document.documentElement;
+
+  function setTheme(theme) {
+    root.dataset.theme = theme;
+    localStorage.setItem("theme", theme);
+
+    // Update button icon with proper stroke color
+    themeBtn.innerHTML =
+      theme === "dark"
+        ?` <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="var(--nav-active-color)"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-moon"
+        >
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+        </svg>`
+        : ` <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="var(--nav-active-color)"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-sun"
+        >
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="m4.93 4.93 1.41 1.41" />
+          <path d="m17.66 17.66 1.41 1.41" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="m6.34 17.66-1.41 1.41" />
+          <path d="m19.07 4.93-1.41 1.41" />
+        </svg>`;
+
+    // Update selected nav color when theme changes
+    if (selectedNav) {
+      selectedNav.style.color = "var(--nav-active-color)";
+    }
+  }
+
+  function toggleTheme() {
+    const newTheme = root.dataset.theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+  });
+
+  themeBtn.addEventListener("click", toggleTheme);
+};
+
+darkMode();

@@ -1,59 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lexman | Dev</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <script src="scripts/script.js" defer></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexman | Dev</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a href="#home">Lexman</a>
+      <div class="menu-bars" id="menu-bars">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
 
-  <header>
-    <a href="#home">Lexman</a>
-    <div class="menu-bars" id="menu-bars">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
+      <div class="overlay overlay-slide-left" id="overlay">
+        <nav>
+          <ul class="menuLinks">
+            <li id="nav-1" class="slide-out-1 nav">
+              <a href="#home" class="nav_text">Home</a>
+            </li>
+            <li id="nav-2" class="slide-out-2 nav">
+              <a href="#about" class="nav_text">About</a>
+            </li>
+            <li id="nav-3" class="slide-out-3 nav">
+              <a href="#skills" class="nav_text">Skills</a>
+            </li>
+            <li id="nav-4" class="slide-out-4 nav">
+              <a href="#projects" class="nav_text">Projects</a>
+            </li>
+            <li id="nav-5" class="slide-out-5 nav">
+              <a href="#contact" class="nav_text">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Sections -->
+      <section id="home">
+        <h1>LEXMAN</h1>
+      </section>
+      <section id="about">
+        <h1>Learn More About Me</h1>
+      </section>
+      <section id="skills">
+        <h1>These Are My Strengths</h1>
+      </section>
+      <section id="projects">
+        <h1>These Are My Results</h1>
+      </section>
+      <section id="contact">
+        <h1>Available Anytime</h1>
+      </section>
+    </main>
+
+    <div class="theme-toggle">
+      <button id="theme-btn" aria-label="Toggle theme">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-moon"
+        >
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+        </svg>
+      </button>
     </div>
-
-    
-  <div class="overlay overlay-slide-left" id="overlay">
-    <nav>
-      <ul class="menuLinks">
-        <li id="nav-1" class="slide-out-1 nav"><a href="#home" class="nav_text">Home</a></li>
-        <li id="nav-2" class="slide-out-2 nav"><a href="#about" class="nav_text">About</a></li>
-        <li id="nav-3" class="slide-out-3 nav"><a href="#skills" class="nav_text">Skills</a></li>
-        <li id="nav-4" class="slide-out-4 nav"><a href="#projects" class="nav_text">Projects</a></li>
-        <li id="nav-5" class="slide-out-5 nav"><a href="#contact" class="nav_text">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-  </header>
-
- 
-<main>
-  <!-- Sections -->
-  <section id="home">
-    <h1>LEXMAN</h1>
-  </section>
-  <section id="about">
-    <h1>Learn More About Me</h1>
-  </section>
-  <section id="skills">
-    <h1>These Are My Strengths</h1>
-  </section>
-  <section id="projects">
-    <h1>These Are My Results</h1>
-  </section>
-  <section id="contact">
-    <h1>Available Anytime</h1>
-  </section>
-</main>
-
-<div class="theme-toggle">
-  <button id="theme-btn" aria-label="Toggle theme"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
-</div>
-
-</body>
+  </body>
 </html>
