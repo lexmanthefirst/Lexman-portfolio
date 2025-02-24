@@ -43,6 +43,16 @@ navItems.forEach((nav) => {
   nav.addEventListener("click", toggleNav);
 });
 
+// Close menu when clicking outside of it
+window.addEventListener("click", function (event) {
+  if (!event.target.matches("#menu-bars")) {
+    if (overlay.classList.contains("overlay-active")) {
+      toggleNav();
+    }
+  }
+});
+
+
 const navArr = Array.from(nav); // Update selector to match your nav items
 
 let selectedNav = null;
@@ -127,3 +137,24 @@ const darkMode = () => {
 };
 
 darkMode();
+
+let lastScroll = window.scrollY;
+const header = document.getElementById("nav-container");
+const headerHeight = header.clientHeight;
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.scrollY;
+  
+  if (currentScroll <= 0) {
+    header.classList.remove("sticky");
+    return;
+  }
+
+  if (currentScroll > lastScroll && currentScroll > headerHeight) {
+    header.classList.add("sticky"); // Hide header when scrolling down
+  } else if (currentScroll < lastScroll) {
+    header.classList.remove("sticky"); // Show header when scrolling up
+  }
+
+  lastScroll = currentScroll;
+});
