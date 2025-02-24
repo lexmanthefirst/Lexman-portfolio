@@ -90,7 +90,7 @@ header {
   padding: 1rem;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 header a {
   font-family: "Bakbak One", sans-serif;
@@ -107,15 +107,18 @@ header a {
 /* Overlay */
 .overlay {
   position: fixed;
-  z-index: 100;
+  z-index: 101;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  transform: translateX(-100vw);
+  
+}
+.overlay-active {
+  transform: translateX(0);
 }
 
 .overlay-slide-right {
@@ -195,8 +198,6 @@ nav li a:hover {
 
 .menu-bars {
   position: fixed;
-  top: 1rem;
-  right: 2rem;
   z-index: 999;
   display: inline;
   cursor: pointer;
@@ -342,7 +343,7 @@ section {
   }
 
   header {
-    height: 60px;
+    /* height: 60px; */
     width: 100%;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(12px);

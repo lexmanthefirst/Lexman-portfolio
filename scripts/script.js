@@ -158,3 +158,31 @@ window.addEventListener("scroll", () => {
 
   lastScroll = currentScroll;
 });
+
+
+function preventScroll(e) {
+  e.preventDefault();
+}
+
+// Function to disable scrolling
+function disableScroll() {
+  document.body.style.overflow = "hidden";
+  document.addEventListener("wheel", preventScroll, { passive: false });
+  document.addEventListener("touchmove", preventScroll, { passive: false });
+}
+
+// Function to enable scrolling
+function enableScroll() {
+  document.body.style.overflow = "";
+  document.removeEventListener("wheel", preventScroll);
+  document.removeEventListener("touchmove", preventScroll);
+}
+
+// Toggle scrolling based on overlay state
+overlay.addEventListener("transitionend", () => {
+  if (overlay.classList.contains("overlay-active")) {
+    disableScroll();
+  } else {
+    enableScroll();
+  }
+});
