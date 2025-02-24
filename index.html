@@ -9,7 +9,7 @@
   </head>
   <body>
     <header id="nav-container">
-      <a href="#home">Lexman</a>
+      <a href="#about">Lexman</a>
       <div class="menu-bars" id="menu-bars">
         <div class="bar1"></div>
         <div class="bar2"></div>
@@ -20,20 +20,17 @@
         <nav>
           <ul class="menuLinks">
             <li id="nav-1" class="slide-out-1 nav">
-              <a href="#home" class="nav_text">Home</a>
-            </li>
-            <li id="nav-2" class="slide-out-2 nav">
               <a href="#about" class="nav_text">About</a>
             </li>
-            <li id="nav-3" class="slide-out-3 nav">
+            <li id="nav-2" class="slide-out-2 nav">
               <a href="#skills" class="nav_text">Skills</a>
             </li>
-            <li id="nav-4" class="slide-out-4 nav">
+            <li id="nav-3" class="slide-out-3 nav">
               <a href="#projects" class="nav_text">Projects</a>
             </li>
-            <li id="nav-5" class="slide-out-5 nav">
+            <li id="nav-4" class="slide-out-4 nav">
               <a href="#contact" class="nav_text">Contact</a>
-            </li>
+          
           </ul>
         </nav>
       </div>
@@ -41,14 +38,20 @@
 
     <main>
       <!-- Sections -->
-      <section id="home">
-        <h1>LEXMAN</h1>
-        <p>Web Developer</p>
-        <button class="cta-btn">Hire Me</button>
-
-      </section>
-      <section id="about">
-        <h1>Learn More About Me</h1>
+      <section id="about" class="about-container">
+       <div class="message">  
+        <h1>Hello, I'm Alex Okhitoya</h1>
+        <p>I'm an enthusiastic full-stack developer that specializes in making user-friendly, powerful digital experiences.  Making web apps quick, scalable, and easy to use is a task I like, from frontend interaction to backend efficiency.</p>
+       </div>
+       <div class="img-container">
+        <picture>
+          <source media="(max-width: 600px)" srcset="images/hero-1_optimized.png">
+          <source media="(max-width: 800px)" srcset="images/hero-1.png">
+          <source media="(max-width: 1200px)" srcset="images/hero-1.png">
+          <source media="(min-width: 1201px)" srcset="images/hero-1.png">
+          <img class="hero-image" src="images/hero-1.png" alt="Alex Okhitoya's profile picture" loading="lazy">
+        </picture>
+       </div>
       </section>
       <section id="skills">
         <h1>These Are My Strengths</h1>

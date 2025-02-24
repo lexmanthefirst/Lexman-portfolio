@@ -5,11 +5,14 @@ const nav1 = document.getElementById("nav-1");
 const nav2 = document.getElementById("nav-2");
 const nav3 = document.getElementById("nav-3");
 const nav4 = document.getElementById("nav-4");
-const nav5 = document.getElementById("nav-5");
+// const nav5 = document.getElementById("nav-5");
 const nav = document.querySelectorAll(".nav_text");
 
-const navItems = [nav1, nav2, nav3, nav4, nav5];
+const navItems = [nav1, nav2, nav3, nav4];
+// const navItems = [nav1, nav2, nav3, nav4, nav5];
+// const navItems = [nav2, nav3, nav4, nav5];
 
+//
 //Control Navigation Animation
 function navAnimation(direction1, direction2) {
   navItems.forEach((nav, i) => {
@@ -80,21 +83,7 @@ const darkMode = () => {
     // Update button icon with proper stroke color
     themeBtn.innerHTML =
       theme === "dark"
-        ?` <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="var(--nav-active-color)"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-moon"
-        >
-          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-        </svg>`
-        : ` <svg
+        ?`<svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
           height="20"
@@ -115,7 +104,21 @@ const darkMode = () => {
           <path d="M20 12h2" />
           <path d="m6.34 17.66-1.41 1.41" />
           <path d="m19.07 4.93-1.41 1.41" />
-        </svg>`;
+        </svg> `
+        : `<svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="var(--nav-active-color)"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-moon"
+        >
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+        </svg> `;
 
     // Update selected nav color when theme changes
     if (selectedNav) {
@@ -158,7 +161,6 @@ window.addEventListener("scroll", () => {
 
   lastScroll = currentScroll;
 });
-
 
 function preventScroll(e) {
   e.preventDefault();
