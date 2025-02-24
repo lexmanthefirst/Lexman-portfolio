@@ -248,7 +248,9 @@ section {
   width: 100%;
   height: 100vh;
 }
-
+section#home{
+  padding-top: 4rem;
+}
 /* Theme toggle */
 .theme-toggle {
   position: fixed;
