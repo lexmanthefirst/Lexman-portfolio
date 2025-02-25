@@ -145,7 +145,7 @@ nav ul {
 nav ul {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:start;
   list-style: none;
 }
 
@@ -368,7 +368,13 @@ section#about {
   object-fit: cover;
   box-shadow: var(--card-shadow);
 }
-
+.social-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
 /* Media Query: Large Smartphone (Vertical) */
 @media (max-width: 37.5em) {
   .menu-bars {
@@ -412,6 +418,7 @@ section#about {
     line-height: normal;
     color: var(--text-color) !important;
     transition: all 0.3s ease;
+    
   }
 
   nav li a:hover {
