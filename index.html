@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Dosis:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    >
     <title>Lexman | Dev</title>
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/script.js" defer></script>
@@ -30,7 +36,7 @@
             </li>
             <li id="nav-4" class="slide-out-4 nav">
               <a href="#contact" class="nav_text">Contact</a>
-          
+            </li>
           </ul>
         </nav>
       </div>
@@ -39,19 +45,35 @@
     <main>
       <!-- Sections -->
       <section id="about" class="about-container">
-       <div class="message">  
-        <h1>Hello, I'm Alex Okhitoya</h1>
-        <p>I'm an enthusiastic full-stack developer that specializes in making user-friendly, powerful digital experiences.  Making web apps quick, scalable, and easy to use is a task I like, from frontend interaction to backend efficiency.</p>
-       </div>
-       <div class="img-container">
-        <picture>
-          <source media="(max-width: 400px)" srcset="images/hero-1_400.png">
-          <source media="(max-width: 600px)" srcset="images/hero-1_optimized.png">
-          <source media="(max-width: 1200px)" srcset="images/hero-1.png">
-          <source media="(min-width: 1201px)" srcset="images/hero-1.png">
-          <img class="hero-image" src="images/hero-1.png" alt="Alex Okhitoya's profile picture" loading="lazy">
-        </picture>
-       </div>
+        <div class="message">
+          <div class="description">
+            <h1>Hello, I'm Alex Okhitoya</h1>
+          <p>
+            I'm an enthusiastic full-stack developer that specializes in making
+            user-friendly, powerful digital experiences. Making web apps quick,
+            scalable, and easy to use is a task I like, from frontend
+            interaction to backend efficiency.
+          </p> 
+          </div>
+          <div class="img-container">
+            <picture>
+              <source media="(max-width: 400px)" srcset="images/hero-1_400.png" />
+              <source
+                media="(max-width: 600px)"
+                srcset="images/hero-1_optimized.png"
+              />
+              <source media="(max-width: 1200px)" srcset="images/hero-1.png" />
+              <source media="(min-width: 1201px)" srcset="images/hero-1.png" />
+              <img
+                class="hero-image"
+                src="images/hero-1.png"
+                alt="Alex Okhitoya's profile picture"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        </div>
+       
       </section>
       <section id="skills">
         <h1>These Are My Strengths</h1>
