@@ -7,7 +7,7 @@
   --menu-bar-bg: #000;
   --heading-font: "Dosis", serif;
   --paragraph-font: "Inter", serif;
-  --card-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  --card-shadow: 0 8px 32px rgba(31, 38, 135, 0.5);
   --card-bg: #ffffff;
   --nav-active-color: #fff;
   --nav-inactive-color: #757575;
@@ -28,6 +28,7 @@
   --accent-color: #ffae00;
   --menu-bar-bg: #fff;
   --card-bg: linear-gradient(to right, #141e30, #243b55);
+  --card-shadow: 0 8px 32px rgba(165, 170, 244, 0.6);
   --nav-active-color: #757575;
   --nav-inactive-color: #e0e0e0;
   --nav-active-shadow: drop-shadow(0 0 0.75rem rgba(255, 255, 255, 0.1));
@@ -144,8 +145,7 @@ nav ul {
 nav ul {
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
-
+  justify-content: center;
   list-style: none;
 }
 
@@ -159,10 +159,9 @@ nav li a {
   top: 45%;
   color: var(--text-color);
   text-transform: uppercase;
-  font-family: "Bakbak One", serif;
+  font-family: "Inter", serif;
   font-weight: 600;
-  line-height: 0;
-  font-size: 3.8rem;
+  font-size: 2.8rem;
   letter-spacing: 4px;
   text-decoration: none;
   display: block;
@@ -227,8 +226,6 @@ nav li a:hover {
 /* Rotate first bar */
 .change .bar1 {
   filter: drop-shadow(0 0 0.75rem #0000);
-  outline: 1px solid #000;
-  outline-offset: 1px;
   transform: rotate(-45deg) translate(-7px, 8px);
 }
 
@@ -240,8 +237,6 @@ nav li a:hover {
 /* Rotate last bar */
 .change .bar3 {
   filter: drop-shadow(0 0 0.75rem #0000);
-  outline: 1px solid #000;
-  outline-offset: 1px;
   transform: rotate(45deg) translate(-6px, -8px);
 }
 
@@ -267,7 +262,6 @@ section#about {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  box-shadow: var(--card-shadow);
   backdrop-filter: blur(8px);
   transition: all 0.3s ease;
   cursor: pointer;
@@ -336,14 +330,13 @@ section#about {
   align-items: center;
   text-align: left;
   height: 30rem;
-  box-shadow: var(--card-shadow);
 }
 
 .message h1 {
   grid-area: title;
   font-size: 2.5rem;
   color: var(--text-color);
-  font-family: "Bakbak One", serif;
+  font-family: "Inter", serif;
   line-height: 1;
   padding: 0.5rem 0;
   transition: all 0.3s ease-in-out;
@@ -373,6 +366,7 @@ section#about {
   height: 14rem;
   animation: float 6s ease-in-out infinite;
   object-fit: cover;
+  box-shadow: var(--card-shadow);
 }
 
 /* Media Query: Large Smartphone (Vertical) */
@@ -381,9 +375,6 @@ section#about {
     top: 0.5rem;
     right: 2rem;
   }
-  /* .img-container img {
-    display: none;
-  } */
 }
 @media only screen and (min-width: 48em) {
   .overlay {
