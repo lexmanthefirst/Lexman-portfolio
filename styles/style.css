@@ -321,7 +321,6 @@ section#about {
 .message {
   display: grid;
   grid-template-areas:
-    "title"
     "description"
     "photograph";
   border: none;
@@ -330,12 +329,10 @@ section#about {
   padding: 1rem;
   justify-content: center;
   align-items: center;
-  text-align: left;
   height: 30rem;
 }
 
 .message h1 {
-  grid-area: title;
   font-size: 2.5rem;
   color: var(--text-color);
   font-family: "Inter", serif;
@@ -344,17 +341,23 @@ section#about {
   transition: all 0.3s ease-in-out;
   margin-bottom: 1rem;
   text-transform: uppercase;
+
 }
 
 .message p {
-  grid-area: description;
   font-size: 1.5rem;
   color: var(--text-color);
-  font-family: "Latos", serif;
+  font-family: "Inter", serif;
   line-height: 1.3;
   transition: all 0.3s ease-in-out;
   text-align: justify;
   font-weight: 500;
+  width: 20rem;
+  justify-self: center;
+}
+.description{
+  grid-area: description;
+  justify-self: center;
 }
 .img-container {
   grid-area: photograph;
@@ -457,7 +460,6 @@ section#about {
   }
   .message {
     grid-template-areas:
-      "title photograph"
       "description photograph"
       "description photograph";
       justify-content: space-between;
