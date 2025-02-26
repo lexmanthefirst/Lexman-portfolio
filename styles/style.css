@@ -96,7 +96,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background:var(--bg-color);
+  background: var(--bg-color);
   transition: all 0.3s ease-in-out;
 }
 header a {
@@ -118,7 +118,7 @@ header a {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color:var(--overlay-active-color);
+  background-color: var(--overlay-active-color);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transform: translateX(-100vw);
@@ -147,7 +147,7 @@ nav ul {
 nav ul {
   display: flex;
   flex-direction: column;
-  justify-content:start;
+  justify-content: start;
   list-style: none;
 }
 
@@ -326,13 +326,13 @@ section#about {
   border: none;
   background-color: var(--card-bg);
   border-radius: 8px;
-  padding: 1rem;
+  padding: 0 1rem 0 1rem;
   justify-content: center;
   align-items: center;
   height: 30rem;
 }
 
-.message h1 {
+.description h1 {
   font-size: 2.5rem;
   color: var(--text-color);
   font-family: "Inter", serif;
@@ -341,10 +341,9 @@ section#about {
   transition: all 0.3s ease-in-out;
   margin-bottom: 1rem;
   text-transform: uppercase;
-
 }
 
-.message p {
+.description p {
   font-size: 1.5rem;
   color: var(--text-color);
   font-family: "Inter", serif;
@@ -353,16 +352,17 @@ section#about {
   text-align: left;
   font-weight: 500;
   width: 20rem;
-  justify-self: center;
 }
-.description{
+.description {
   grid-area: description;
-  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
 }
 .img-container {
   grid-area: photograph;
-  display: flex;
-  justify-content: center;
+
 }
 .img-container img {
   border-radius: 0.5rem;
@@ -372,7 +372,7 @@ section#about {
   object-fit: cover;
   box-shadow: var(--card-shadow);
 }
-.social-icons{
+.social-icons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -422,7 +422,6 @@ section#about {
     line-height: normal;
     color: var(--text-color) !important;
     transition: all 0.3s ease;
-    
   }
 
   nav li a:hover {
@@ -462,11 +461,11 @@ section#about {
     grid-template-areas:
       "description photograph"
       "description photograph";
-      justify-content: space-between;
-      width: 60rem;
-      height: 30rem;
+    justify-content: space-between;
+    width: 60rem;
+    height: 30rem;
   }
-  .message p{
+  .message p {
     width: 28rem;
     text-align: justify;
   }
