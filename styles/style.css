@@ -254,7 +254,7 @@ section#about {
 .theme-toggle {
   position: fixed;
   bottom: 2rem;
-  right: 2rem;
+  right: 1rem;
 }
 
 #theme-btn {
@@ -469,11 +469,11 @@ section#about {
       "description photograph"
       "description photograph";
     justify-content: space-between;
-    width: 60rem;
+    width: 65rem;
     height: 30rem;
   }
-  .message p {
-    width: 28rem;
+  .description p {
+    width: 30rem;
     text-align: left;
   }
 }
