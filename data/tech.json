@@ -1,0 +1,50 @@
+[
+  {
+    "name": "JavaScript",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+    "description": "A versatile programming language used for building dynamic web applications.",
+    "useCase": "I use JavaScript for client-side scripting, interactive UI components, and backend logic with Node.js."
+  },
+  {
+    "name": "React",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+    "description": "A JavaScript library for building fast and interactive user interfaces.",
+    "useCase": "I use React to create modular, reusable UI components and build single-page applications."
+  },
+  {
+    "name": "GSAP",
+    "image": "https://greensock.com/uploads/monthly_2020_10/gsap-logo.png",
+    "description": "A powerful animation library for creating high-performance animations on the web.",
+    "useCase": "I use GSAP to add smooth animations and interactive motion effects to my projects."
+  },
+  {
+    "name": "Tailwind CSS",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+    "description": "A utility-first CSS framework that allows for rapid UI development.",
+    "useCase": "I use Tailwind to design responsive, modern, and clean UIs efficiently."
+  },
+  {
+    "name": "C#",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png",
+    "description": "A modern, object-oriented programming language developed by Microsoft.",
+    "useCase": "I use C# for backend development, working with APIs, and building enterprise applications."
+  },
+  {
+    "name": ".NET",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_.NET_logo.svg",
+    "description": "A framework for building scalable web applications and APIs.",
+    "useCase": "I use .NET to develop robust, secure, and high-performance backend services."
+  },
+  {
+    "name": "Node.js",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+    "description": "A runtime environment that allows JavaScript to run on the server side.",
+    "useCase": "I use Node.js to build scalable backend applications and real-time services."
+  },
+  {
+    "name": "Express",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png",
+    "description": "A minimal and flexible Node.js web framework for building APIs and web applications.",
+    "useCase": "I use Express to create RESTful APIs, handle middleware, and manage backend logic."
+  }
+]
