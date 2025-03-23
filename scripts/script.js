@@ -1,12 +1,12 @@
-"use strict";
-const menuBars = document.getElementById("menu-bars");
-const overlay = document.getElementById("overlay");
-const nav1 = document.getElementById("nav-1");
-const nav2 = document.getElementById("nav-2");
-const nav3 = document.getElementById("nav-3");
-const nav4 = document.getElementById("nav-4");
-const nav5 = document.getElementById("nav-5");
-const nav = document.querySelectorAll(".nav_text");
+'use strict';
+const menuBars = document.getElementById('menu-bars');
+const overlay = document.getElementById('overlay');
+const nav1 = document.getElementById('nav-1');
+const nav2 = document.getElementById('nav-2');
+const nav3 = document.getElementById('nav-3');
+const nav4 = document.getElementById('nav-4');
+const nav5 = document.getElementById('nav-5');
+const nav = document.querySelectorAll('.nav_text');
 
 // const navItems = [nav1, nav2, nav3, nav4];
 const navItems = [nav1, nav2, nav3, nav4, nav5];
@@ -25,65 +25,64 @@ function navAnimation(direction1, direction2) {
 
 function toggleNav() {
   //Toogle: Menu Bars Open/Close
-  menuBars.classList.toggle("change");
+  menuBars.classList.toggle('change');
   //Toggle: Menu active
-  overlay.classList.toggle("overlay-active");
-  if (overlay.classList.contains("overlay-active")) {
+  overlay.classList.toggle('overlay-active');
+  if (overlay.classList.contains('overlay-active')) {
     //Animate in-OVerlay
-    overlay.classList.replace("overlay-slide-left", "overlay-slide-right");
+    overlay.classList.replace('overlay-slide-left', 'overlay-slide-right');
     //Animate in - Nav Items
-    navAnimation("out", "in");
+    navAnimation('out', 'in');
   } else {
     //Animate Out-overlay
-    overlay.classList.replace("overlay-slide-right", "overlay-slide-left");
+    overlay.classList.replace('overlay-slide-right', 'overlay-slide-left');
     //Animate Out - Nav Items
-    navAnimation("in", "out");
+    navAnimation('in', 'out');
   }
 }
 //Event Listeners
-menuBars.addEventListener("click", toggleNav);
-navItems.forEach((nav) => {
-  nav.addEventListener("click", toggleNav);
+menuBars.addEventListener('click', toggleNav);
+navItems.forEach(nav => {
+  nav.addEventListener('click', toggleNav);
 });
 
 // Close menu when clicking outside of it
-window.addEventListener("click", function (event) {
-  if (!event.target.matches("#menu-bars")) {
-    if (overlay.classList.contains("overlay-active")) {
+window.addEventListener('click', function (event) {
+  if (!event.target.matches('#menu-bars')) {
+    if (overlay.classList.contains('overlay-active')) {
       toggleNav();
     }
   }
 });
 
-
 const navArr = Array.from(nav); // Update selector to match your nav items
 
 let selectedNav = null;
 
-navArr.forEach((nav) => {
-  nav.addEventListener("click", function () {
+navArr.forEach(nav => {
+  nav.addEventListener('click', function () {
     if (selectedNav !== null) {
-      selectedNav.style.color = "";
-      selectedNav.style.filter = "";
+      selectedNav.style.color = '';
+      selectedNav.style.filter = '';
     }
-    nav.style.color = "var(--nav-active-color)";
-    nav.style.filter = "var(--nav-active-shadow)";
+    nav.style.color = 'var(--nav-active-color)';
+    nav.style.filter = 'var(--nav-active-shadow)';
     selectedNav = nav;
   });
 });
 
 const darkMode = () => {
-  const themeBtn = document.getElementById("theme-btn");
+  const themeBtn = document.getElementById('theme-btn');
   const root = document.documentElement;
 
   function setTheme(theme) {
     root.dataset.theme = theme;
-    localStorage.setItem("theme", theme);
+    localStorage.setItem('theme', theme);
 
     // Update button icon with proper stroke color
     themeBtn.innerHTML =
-      theme === "dark"
-        ?`<svg
+      theme === 'dark'
+        ? `<svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
           height="20"
@@ -122,41 +121,41 @@ const darkMode = () => {
 
     // Update selected nav color when theme changes
     if (selectedNav) {
-      selectedNav.style.color = "var(--nav-active-color)";
+      selectedNav.style.color = 'var(--nav-active-color)';
     }
   }
 
   function toggleTheme() {
-    const newTheme = root.dataset.theme === "dark" ? "light" : "dark";
+    const newTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem("theme") || "light";
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
   });
 
-  themeBtn.addEventListener("click", toggleTheme);
+  themeBtn.addEventListener('click', toggleTheme);
 };
 
 darkMode();
 
 let lastScroll = window.scrollY;
-const header = document.getElementById("nav-container");
+const header = document.getElementById('nav-container');
 const headerHeight = header.clientHeight;
 
-window.addEventListener("scroll", () => {
+window.addEventListener('scroll', () => {
   const currentScroll = window.scrollY;
-  
+
   if (currentScroll <= 0) {
-    header.classList.remove("sticky");
+    header.classList.remove('sticky');
     return;
   }
 
   if (currentScroll > lastScroll && currentScroll > headerHeight) {
-    header.classList.add("sticky"); // Hide header when scrolling down
+    header.classList.add('sticky'); // Hide header when scrolling down
   } else if (currentScroll < lastScroll) {
-    header.classList.remove("sticky"); // Show header when scrolling up
+    header.classList.remove('sticky'); // Show header when scrolling up
   }
 
   lastScroll = currentScroll;
@@ -168,23 +167,47 @@ function preventScroll(e) {
 
 // Function to disable scrolling
 function disableScroll() {
-  document.body.style.overflow = "hidden";
-  document.addEventListener("wheel", preventScroll, { passive: false });
-  document.addEventListener("touchmove", preventScroll, { passive: false });
+  document.body.style.overflow = 'hidden';
+  document.addEventListener('wheel', preventScroll, { passive: false });
+  document.addEventListener('touchmove', preventScroll, { passive: false });
 }
 
 // Function to enable scrolling
 function enableScroll() {
-  document.body.style.overflow = "";
-  document.removeEventListener("wheel", preventScroll);
-  document.removeEventListener("touchmove", preventScroll);
+  document.body.style.overflow = '';
+  document.removeEventListener('wheel', preventScroll);
+  document.removeEventListener('touchmove', preventScroll);
 }
 
 // Toggle scrolling based on overlay state
-overlay.addEventListener("transitionend", () => {
-  if (overlay.classList.contains("overlay-active")) {
+overlay.addEventListener('transitionend', () => {
+  if (overlay.classList.contains('overlay-active')) {
     disableScroll();
   } else {
     enableScroll();
+  }
+});
+
+const btns = document.querySelectorAll('.btn');
+const resumeWrapper = document.querySelector('.tech-stack-wrapper');
+const contents = document.querySelectorAll('.content');
+
+resumeWrapper.addEventListener('click', function (e) {
+  const id = e.target.dataset.id;
+  if (id) {
+    // remove active from other buttons
+    btns.forEach(btn => {
+      btn.classList.remove('active');
+
+      e.target.classList.add('active');
+    });
+
+    // hide others contents
+    contents.forEach(content => {
+      content.classList.remove('active');
+    });
+
+    const element = document.getElementById(id);
+    element.classList.add('active');
   }
 });
