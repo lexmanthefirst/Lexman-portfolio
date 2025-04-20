@@ -1,4 +1,6 @@
 'use strict';
+
+// DOM Elements
 const menuBars = document.getElementById('menu-bars');
 const overlay = document.getElementById('overlay');
 const nav1 = document.getElementById('nav-1');
@@ -7,13 +9,23 @@ const nav3 = document.getElementById('nav-3');
 const nav4 = document.getElementById('nav-4');
 const nav5 = document.getElementById('nav-5');
 const nav = document.querySelectorAll('.nav_text');
-
-// const navItems = [nav1, nav2, nav3, nav4];
 const navItems = [nav1, nav2, nav3, nav4, nav5];
-// const navItems = [nav2, nav3, nav4, nav5];
+const navArr = Array.from(nav);
+const header = document.getElementById('nav-container');
+const headerHeight = header.clientHeight;
+const btns = document.querySelectorAll('.btn');
+const resumeWrapper = document.querySelector('.tech-stack-wrapper');
+const contents = document.querySelectorAll('.content');
 
-//
-//Control Navigation Animation
+// Variables
+let lastScroll = window.scrollY;
+let selectedNav = null;
+
+/**
+ * Controls navigation animation
+ * @param {string} direction1 - Initial direction
+ * @param {string} direction2 - Target direction
+ */
 function navAnimation(direction1, direction2) {
   navItems.forEach((nav, i) => {
     nav.classList.replace(
@@ -23,58 +35,65 @@ function navAnimation(direction1, direction2) {
   });
 }
 
+/**
+ * Toggles navigation menu
+ */
 function toggleNav() {
-  //Toogle: Menu Bars Open/Close
+  // Toggle: Menu Bars Open/Close
   menuBars.classList.toggle('change');
-  //Toggle: Menu active
+  // Toggle: Menu active
   overlay.classList.toggle('overlay-active');
+
   if (overlay.classList.contains('overlay-active')) {
-    //Animate in-OVerlay
+    // Animate in - Overlay
     overlay.classList.replace('overlay-slide-left', 'overlay-slide-right');
-    //Animate in - Nav Items
+    // Animate in - Nav Items
     navAnimation('out', 'in');
   } else {
-    //Animate Out-overlay
+    // Animate Out - Overlay
     overlay.classList.replace('overlay-slide-right', 'overlay-slide-left');
-    //Animate Out - Nav Items
+    // Animate Out - Nav Items
     navAnimation('in', 'out');
   }
 }
-//Event Listeners
-menuBars.addEventListener('click', toggleNav);
-navItems.forEach(nav => {
-  nav.addEventListener('click', toggleNav);
-});
 
-// Close menu when clicking outside of it
-window.addEventListener('click', function (event) {
-  if (!event.target.matches('#menu-bars')) {
-    if (overlay.classList.contains('overlay-active')) {
-      toggleNav();
-    }
-  }
-});
+/**
+ * Prevents default scroll behavior
+ * @param {Event} e - Event object
+ */
+function preventScroll(e) {
+  e.preventDefault();
+}
 
-const navArr = Array.from(nav); // Update selector to match your nav items
+/**
+ * Disables scrolling
+ */
+function disableScroll() {
+  document.body.style.overflow = 'hidden';
+  document.addEventListener('wheel', preventScroll, { passive: false });
+  document.addEventListener('touchmove', preventScroll, { passive: false });
+}
 
-let selectedNav = null;
+/**
+ * Enables scrolling
+ */
+function enableScroll() {
+  document.body.style.overflow = '';
+  document.removeEventListener('wheel', preventScroll);
+  document.removeEventListener('touchmove', preventScroll);
+}
 
-navArr.forEach(nav => {
-  nav.addEventListener('click', function () {
-    if (selectedNav !== null) {
-      selectedNav.style.color = '';
-      selectedNav.style.filter = '';
-    }
-    nav.style.color = 'var(--nav-active-color)';
-    nav.style.filter = 'var(--nav-active-shadow)';
-    selectedNav = nav;
-  });
-});
-
+/**
+ * Initializes dark mode functionality
+ */
 const darkMode = () => {
   const themeBtn = document.getElementById('theme-btn');
   const root = document.documentElement;
 
+  /**
+   * Sets the theme
+   * @param {string} theme - Theme to set ('light' or 'dark')
+   */
   function setTheme(theme) {
     root.dataset.theme = theme;
     localStorage.setItem('theme', theme);
@@ -103,7 +122,7 @@ const darkMode = () => {
           <path d="M20 12h2" />
           <path d="m6.34 17.66-1.41 1.41" />
           <path d="m19.07 4.93-1.41 1.41" />
-        </svg> `
+        </svg>`
         : `<svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -117,7 +136,7 @@ const darkMode = () => {
           class="lucide lucide-moon"
         >
           <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-        </svg> `;
+        </svg>`;
 
     // Update selected nav color when theme changes
     if (selectedNav) {
@@ -125,25 +144,53 @@ const darkMode = () => {
     }
   }
 
+  /**
+   * Toggles between light and dark themes
+   */
   function toggleTheme() {
     const newTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
   }
 
+  // Initialize theme on page load
   document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
   });
 
+  // Add event listener for theme toggle
   themeBtn.addEventListener('click', toggleTheme);
 };
 
-darkMode();
+// Event Listeners
+menuBars.addEventListener('click', toggleNav);
+navItems.forEach(nav => {
+  nav.addEventListener('click', toggleNav);
+});
 
-let lastScroll = window.scrollY;
-const header = document.getElementById('nav-container');
-const headerHeight = header.clientHeight;
+// Close menu when clicking outside of it
+window.addEventListener('click', function (event) {
+  if (!event.target.matches('#menu-bars')) {
+    if (overlay.classList.contains('overlay-active')) {
+      toggleNav();
+    }
+  }
+});
 
+// Handle navigation item selection
+navArr.forEach(nav => {
+  nav.addEventListener('click', function () {
+    if (selectedNav !== null) {
+      selectedNav.style.color = '';
+      selectedNav.style.filter = '';
+    }
+    nav.style.color = 'var(--nav-active-color)';
+    nav.style.filter = 'var(--nav-active-shadow)';
+    selectedNav = nav;
+  });
+});
+
+// Handle scroll events for header
 window.addEventListener('scroll', () => {
   const currentScroll = window.scrollY;
 
@@ -161,24 +208,6 @@ window.addEventListener('scroll', () => {
   lastScroll = currentScroll;
 });
 
-function preventScroll(e) {
-  e.preventDefault();
-}
-
-// Function to disable scrolling
-function disableScroll() {
-  document.body.style.overflow = 'hidden';
-  document.addEventListener('wheel', preventScroll, { passive: false });
-  document.addEventListener('touchmove', preventScroll, { passive: false });
-}
-
-// Function to enable scrolling
-function enableScroll() {
-  document.body.style.overflow = '';
-  document.removeEventListener('wheel', preventScroll);
-  document.removeEventListener('touchmove', preventScroll);
-}
-
 // Toggle scrolling based on overlay state
 overlay.addEventListener('transitionend', () => {
   if (overlay.classList.contains('overlay-active')) {
@@ -188,26 +217,28 @@ overlay.addEventListener('transitionend', () => {
   }
 });
 
-const btns = document.querySelectorAll('.btn');
-const resumeWrapper = document.querySelector('.tech-stack-wrapper');
-const contents = document.querySelectorAll('.content');
-
+// Handle resume section tab switching
 resumeWrapper.addEventListener('click', function (e) {
   const id = e.target.dataset.id;
   if (id) {
-    // remove active from other buttons
+    // Remove active from other buttons
     btns.forEach(btn => {
       btn.classList.remove('active');
-
-      e.target.classList.add('active');
     });
 
-    // hide others contents
+    // Add active to clicked button
+    e.target.classList.add('active');
+
+    // Hide other contents
     contents.forEach(content => {
       content.classList.remove('active');
     });
 
+    // Show selected content
     const element = document.getElementById(id);
     element.classList.add('active');
   }
 });
+
+// Initialize dark mode
+darkMode();
