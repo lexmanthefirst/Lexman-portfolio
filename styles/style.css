@@ -118,7 +118,9 @@ body {
   font-family: var(--paragraph-font);
   color: var(--text-color);
   background-color: var(--background-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   overflow-x: hidden;
   width: 100%;
 }
@@ -249,7 +251,7 @@ nav li a:hover {
 .bar1,
 .bar3 {
   width: 20px;
-  height: 2px;
+  height: 3px;
   background-color: var(--menu-bar-bg);
   margin: 8px 0;
   transition: 0.25s;
