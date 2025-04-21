@@ -30,7 +30,7 @@ function navAnimation(direction1, direction2) {
   navItems.forEach((nav, i) => {
     nav.classList.replace(
       `slide-${direction1}-${i + 1}`,
-      `slide-${direction2}-${i + 1}`
+      `slide-${direction2}-${i + 1}`,
     );
   });
 }
@@ -240,5 +240,32 @@ resumeWrapper.addEventListener('click', function (e) {
   }
 });
 
+// Initialize marquee
+const initMarquee = () => {
+  const root = document.documentElement;
+  const marqueeContent = document.querySelector('ul.marquee-content');
+
+  if (marqueeContent) {
+    const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
+      '--marquee-elements-displayed',
+    );
+
+    root.style.setProperty(
+      '--marquee-elements',
+      marqueeContent.children.length,
+    );
+
+    // Clone elements for seamless scrolling
+    for (let i = 0; i < marqueeElementsDisplayed; i++) {
+      marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+    }
+  }
+};
+
 // Initialize dark mode
 darkMode();
+
+// Initialize marquee when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  initMarquee();
+});
