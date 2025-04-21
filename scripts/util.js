@@ -9,13 +9,31 @@ const nav3 = document.getElementById('nav-3');
 const nav4 = document.getElementById('nav-4');
 const nav5 = document.getElementById('nav-5');
 const nav = document.querySelectorAll('.nav_text');
-const navItems = [nav1, nav2, nav3, nav4, nav5];
+const navItems = [nav1, nav2, nav3, nav4];
 const navArr = Array.from(nav);
 const header = document.getElementById('nav-container');
 const headerHeight = header.clientHeight;
 const btns = document.querySelectorAll('.btn');
 const resumeWrapper = document.querySelector('.tech-stack-wrapper');
 const contents = document.querySelectorAll('.content');
+const scrollUpBtn = document.querySelector('.arrow-up');
+
+// Scroll to top button functionality
+function toggleScrollUpBtn() {
+  if (window.scrollY > 100) {
+    scrollUpBtn.classList.add('visible');
+  } else {
+    scrollUpBtn.classList.remove('visible');
+  }
+}
+toggleScrollUpBtn();
+window.addEventListener('scroll', toggleScrollUpBtn);
+scrollUpBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+});
 
 // Variables
 let lastScroll = window.scrollY;
@@ -268,4 +286,82 @@ darkMode();
 // Initialize marquee when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   initMarquee();
+});
+
+// Project Carousel Functionality
+function initCarousel() {
+  const track = document.querySelector('.carousel-track');
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.carousel-dot');
+  const prevButton = document.querySelector('.carousel-button.prev');
+  const nextButton = document.querySelector('.carousel-button.next');
+
+  let currentIndex = 0;
+  const slideCount = slides.length;
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    // Update dots
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slideCount;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+    updateCarousel();
+  }
+
+  // Event Listeners
+  if (prevButton) prevButton.addEventListener('click', prevSlide);
+  if (nextButton) nextButton.addEventListener('click', nextSlide);
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      currentIndex = index;
+      updateCarousel();
+    });
+  });
+
+  // Auto-advance slides every 5 seconds
+  let autoAdvance = setInterval(nextSlide, 5000);
+
+  // Pause auto-advance when hovering over carousel
+  const carousel = document.querySelector('.carousel');
+  if (carousel) {
+    carousel.addEventListener('mouseenter', () => clearInterval(autoAdvance));
+    carousel.addEventListener('mouseleave', () => {
+      autoAdvance = setInterval(nextSlide, 5000);
+    });
+  }
+
+  // Initialize carousel
+  updateCarousel();
+}
+
+// Initialize carousel when DOM is loaded
+document.addEventListener('DOMContentLoaded', initCarousel);
+
+//Email copy to clipboard notification
+const copyBtn = document.getElementById('copyBtn');
+const email = document.getElementById('email');
+const toast = document.getElementById('toast');
+
+copyBtn.addEventListener('click', () => {
+  const emailText = email.textContent;
+
+  navigator.clipboard.writeText(emailText).then(() => {
+    //Show the toast
+    toast.classList.add('show');
+    //Hide the toast after 2 secs
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2000);
+  });
 });

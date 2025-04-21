@@ -39,9 +39,6 @@
             <a href="#projects" class="nav_text">Projects</a>
           </li>
           <li id="nav-4" class="slide-out-4 nav">
-            <a href="#contact" class="nav_text">Contact</a>
-          </li>
-          <li id="nav-5" class="slide-out-5 nav">
             <div class="social-icons">
               <a href="https://github.com/lexmanthefirst" rel="noopener noreferrer" target="_blank" aria-label="GitHub">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -116,7 +113,7 @@
         </div>
         <div class="tech-stack-container">
           <div class="content active" id="education">
-            <h2>Educational Qualification</h2>
+            <h1>Educational Qualification</h1>
             <div class="timeline">
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
@@ -248,10 +245,109 @@
       </div>
     </section>
     <section id="projects">
-      <h1>These Are My Results</h1>
-    </section>
-    <section id="contact">
-      <h1>Available Anytime</h1>
+      <div class="projects-container">
+        <h2>Projects</h2>
+        <div class="carousel">
+          <div class="carousel-track">
+            <!-- Project 1 -->
+            <div class="carousel-slide">
+              <div class="project-image-container">
+                <img src="public/images/project1.jpg" alt="E-Commerce Platform" class="project-image">
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">E-Commerce Platform</h3>
+                <p class="project-description">
+                  A full-stack e-commerce platform with real-time inventory management,
+                  secure payment processing, and an intuitive admin dashboard.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">MongoDB</span>
+                  <span class="tech-tag">Stripe</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                  </a>
+                  <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> Source Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="carousel-slide">
+              <div class="project-image-container">
+                <img src="public/images/project2.jpg" alt="Task Management App" class="project-image">
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Task Management App</h3>
+                <p class="project-description">
+                  A collaborative task management application with real-time updates,
+                  team workspaces, and progress tracking features.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Vue.js</span>
+                  <span class="tech-tag">Firebase</span>
+                  <span class="tech-tag">Tailwind CSS</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                  </a>
+                  <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> Source Code
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="carousel-slide">
+              <div class="project-image-container">
+                <img src="public/images/project3.jpg" alt="Weather Dashboard" class="project-image">
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Weather Dashboard</h3>
+                <p class="project-description">
+                  A weather dashboard that provides real-time weather data,
+                  forecasts, and interactive maps using various weather APIs.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">OpenWeather API</span>
+                  <span class="tech-tag">Chart.js</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                  </a>
+                  <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i> Source Code
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <button class="carousel-button prev" aria-label="Previous slide">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="carousel-button next" aria-label="Next slide">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <!-- Navigation Dots -->
+          <div class="carousel-nav">
+            <button class="carousel-dot active" aria-label="Slide 1"></button>
+            <button class="carousel-dot" aria-label="Slide 2"></button>
+            <button class="carousel-dot" aria-label="Slide 3"></button>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -260,9 +356,13 @@
       <div class="footer-section">
         <h3>Contact</h3>
         <div class="contact-info">
-          <p>Email: alex@example.com</p>
-          <p>Phone: +1 234 567 8900</p>
-          <p>Location: Idaho, USA</p>
+          <div class="email-container">
+            <a href="mailto:lexmanthefirst@gmail.com" class="email-address" id="email">lexmanthefirst@gmail.com</a>
+            <button class="copy-btn" id="copyBtn" title="Copy Email"><i class="fa fa-clone"
+                aria-hidden="true"></i></button>
+          </div>
+          <span class="toast" id="toast"> Email copied!</span>
+
         </div>
       </div>
       <div class="footer-section">
@@ -290,13 +390,19 @@
   </footer>
 
   <div class="theme-toggle">
-    <button id="theme-btn" aria-label="Toggle theme">
+    <button id="theme-btn" aria-label="Toggle theme" title="Toggle theme" type="button">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon">
         <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
       </svg>
     </button>
   </div>
+  <button class="arrow-up" aria-label="Scroll to top" type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  </button>
 </body>
 
 </html>
