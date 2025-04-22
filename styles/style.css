@@ -412,7 +412,7 @@ section#about {
 .theme-toggle {
   position: fixed;
   bottom: 2rem;
-  right: 1rem;
+  right: 1.5rem;
   z-index: 999;
 }
 .arrow-up {
@@ -421,29 +421,41 @@ section#about {
 .arrow-up.visible {
   display: flex;
   justify-content: center;
-  position: sticky;
-  left: 1rem;
+  align-items: center;
+  position: fixed;
+  left: 1.5rem;
   bottom: 2rem;
   z-index: 998;
-  width: 2rem;
-  background: none;
-  border: none;
-}
-.arrow-up .visible svg {
-  width: 50px;
-  height: 50px;
-  color: var(--text-color);
+  width: 3rem;
+  height: 3rem;
+  background: var(--card-bg);
+  border: 2px solid var(--text-color);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
   cursor: pointer;
+}
+.arrow-up.visible:hover {
+  background: var(--text-color);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.arrow-up.visible:hover svg {
+  stroke: var(--card-bg);
+}
+.arrow-up.visible svg {
+  width: 24px;
+  height: 24px;
+  color: var(--text-color);
   transition: all 0.3s ease;
 }
 #theme-btn {
   background: var(--card-bg);
   border: 2px solid var(--text-color);
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   cursor: pointer;
   display: flex;
@@ -453,10 +465,19 @@ section#about {
 
 #theme-btn:hover {
   background: var(--text-color);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 #theme-btn:hover svg {
   stroke: var(--card-bg);
+}
+
+#theme-btn svg {
+  width: 24px;
+  height: 24px;
+  color: var(--text-color);
+  transition: all 0.3s ease;
 }
 
 /* When scrolling down, hide the header */
@@ -929,16 +950,17 @@ footer {
   font-size: 0.9rem;
   font-family: inherit;
 }
-footer ul li {
-  list-style: none;
-  color: var(--secondary-color);
+.quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
 }
-footer ul li a {
+.quick-links a {
   color: var(--secondary-color);
   text-decoration: none;
-  transition: color 0.3s ease;
 }
-footer ul li a:hover {
+.quick-links a:hover {
   color: var(--accent-color);
 }
 .email-container {
@@ -1318,7 +1340,7 @@ section#resume {
 
 .project-image-container {
   width: 100%;
-  height: 250px;
+  height: 28rem;
   overflow: hidden;
   border-radius: 8px;
   position: relative;
