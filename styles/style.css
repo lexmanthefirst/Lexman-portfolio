@@ -40,7 +40,7 @@
     #ec4899 100%
   );
   --overlay-active-color: rgba(83, 80, 80, 0.5);
-  --container-width: 90%;
+  --container-width: 100%;
   --container-max-width: 1200px;
   --section-padding: 1rem;
   --timeline-content-width: 85%;
@@ -1075,7 +1075,6 @@ section#resume {
 
 .timeline-content {
   width: var(--timeline-content-width);
-  padding: 1rem;
   background: var(--card-bg);
   border-radius: 8px;
   /* box-shadow: var(--card-shadow); */
@@ -1220,6 +1219,7 @@ section#resume {
   .timeline-content {
     width: var(--timeline-content-width);
     position: relative;
+    padding: 1rem;
   }
 
   /* Alternate timeline items left and right */
@@ -1227,12 +1227,14 @@ section#resume {
     margin-right: auto;
     margin-left: 0;
     padding-right: 2rem;
+    border: 1px solid var(--btn-active);
   }
 
   .timeline-item:nth-child(even) .timeline-content {
     margin-left: auto;
     margin-right: 0;
     padding-left: 2rem;
+    border: 1px solid var(--btn-active);
   }
 
   /* Add arrows to timeline content */
@@ -1264,7 +1266,7 @@ section#resume {
 /* Large screens */
 @media only screen and (min-width: 1200px) {
   :root {
-    --container-width: 80%;
+    --container-width: 100%;
     --section-padding: 3rem;
     --timeline-content-width: 40%;
     --marquee-height: 10vh;

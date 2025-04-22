@@ -365,3 +365,9 @@ copyBtn.addEventListener('click', () => {
     }, 2000);
   });
 });
+
+const getCopyright = () => {
+  const copyrightEl = document.getElementById('copyright');
+  copyrightEl.textContent = `© ${new Date().getFullYear()} Alex Okhitoya`;
+};
+getCopyright();
