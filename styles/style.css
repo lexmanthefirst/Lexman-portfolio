@@ -44,15 +44,6 @@
   --container-max-width: 1200px;
   --section-padding: 1rem;
   --timeline-content-width: 85%;
-
-  --marquee-width: 100%;
-  --marquee-height: 15vh;
-  /* --marquee-elements: 12; */ /* defined with JavaScript */
-  --marquee-elements-displayed: 5;
-  --marquee-element-width: calc(
-    var(--marquee-width) / var(--marquee-elements-displayed)
-  );
-  --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
 }
 
 [data-theme='dark'] {
@@ -147,119 +138,74 @@ body {
     background 0.3s ease,
     color 0.3s ease;
 }
+
 body::before {
-  --size: 45px;
-  --line: color-mix(in lch, canvasText, transparent 85%);
+  --size: 40px;
+  --line: color-mix(in lch, canvasText, transparent 90%);
+  --glow: color-mix(in lch, canvasText, transparent 60%);
+  --glow-blur: 3px;
   content: '';
   height: 100vh;
   width: 100vw;
   position: fixed;
   background:
-    linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) 50%
+    linear-gradient(90deg, var(--line) 0.5px, transparent 1px var(--size)) 50%
       50% / var(--size) var(--size),
-    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+    linear-gradient(var(--line) 0.5px, transparent 1px var(--size)) 50% 50% /
       var(--size) var(--size);
-  mask: linear-gradient(-20deg, transparent 50%, white);
+  mask: linear-gradient(-25deg, transparent 40%, white);
   top: 0;
-  transform-style: flat;
+  transform-style: preserve-3d;
   pointer-events: none;
   z-index: -1;
+  animation: gridFloat 20s ease-in-out infinite;
 }
-.marquee {
-  width: var(--marquee-width);
-  height: var(--marquee-height);
-  background-color: transparent;
-  color: var(--text-color);
-  overflow: hidden;
-  position: relative;
-  margin: 2rem 0;
-  border-radius: 8px;
-  padding: 1rem 0;
-}
-.marquee:before,
-.marquee:after {
-  position: absolute;
-  top: 0;
-  width: 10rem;
-  height: 100%;
+
+body::after {
   content: '';
-  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background:
+    linear-gradient(90deg, var(--glow) 0.5px, transparent 1px var(--size)) 50%
+      50% / var(--size) var(--size),
+    linear-gradient(var(--glow) 0.5px, transparent 1px var(--size)) 50% 50% /
+      var(--size) var(--size);
+  top: 0;
+  filter: blur(var(--glow-blur));
+  mask: linear-gradient(-25deg, transparent 40%, white);
+  opacity: 0;
+  transform-style: preserve-3d;
+  pointer-events: none;
+  z-index: -1;
+  animation: gridGlow 8s ease-in-out infinite;
 }
-.marquee:before {
-  left: 0;
-  background: linear-gradient(
-    to right,
-    var(--background-color) 0%,
-    transparent 100%
-  );
-}
-.marquee:after {
-  right: 0;
-  background: linear-gradient(
-    to left,
-    var(--background-color) 0%,
-    transparent 100%
-  );
-}
-.marquee-content {
-  list-style: none;
-  height: 100%;
-  display: flex;
-  animation: scrolling var(--marquee-animation-duration) linear infinite;
-}
-.marquee-content:hover {
-  animation-play-state: paused;
-}
-@keyframes scrolling {
-  0% {
-    transform: translateX(0);
-  }
+
+@keyframes gridFloat {
+  0%,
   100% {
-    transform: translateX(
-      calc(-1 * var(--marquee-element-width) * var(--marquee-elements))
-    );
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.5deg);
   }
 }
-.marquee-content li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* text-align: center; */
-  flex-shrink: 0;
-  width: var(--marquee-element-width);
-  max-height: 100%;
-  font-size: calc(var(--marquee-height) * 0.5); /* Adjusted for better sizing */
-  white-space: nowrap;
-  color: var(--text-color);
-}
 
-.marquee-content li i {
-  font-size: 2rem;
-  color: var(--accent-color);
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
-  opacity: 0.9;
-}
-
-.marquee-content li:hover i {
-  color: var(--primary-color);
-  transform: scale(1.2);
-  opacity: 1;
+@keyframes gridGlow {
+  0%,
+  100% {
+    opacity: 0;
+    --glow-blur: 3px;
+  }
+  50% {
+    opacity: 0.7;
+    --glow-blur: 5px;
+  }
 }
 
 @media (max-width: 600px) {
   html {
     font-size: 12px;
-  }
-  :root {
-    --marquee-width: 100%;
-    --marquee-height: 12vh;
-    --marquee-elements-displayed: 3;
-  }
-  .marquee:before,
-  .marquee:after {
-    width: 5rem;
   }
 }
 header {
@@ -551,6 +497,7 @@ section#about {
 }
 
 .description p {
+  font-family: var(--paragraph-font);
   font-size: 1.1rem;
   line-height: 1.5;
   margin: 0;
@@ -571,6 +518,7 @@ section#about {
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 1.1rem;
+  font-family: var(--paragraph-font);
 }
 
 .cta-primary {
@@ -766,13 +714,13 @@ section#about {
 .btn {
   padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 8px;
   background: var(--card-bg);
   color: var(--text-color);
   font-family: var(--paragraph-font);
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 1.3rem;
 }
 
 .btn:hover {
@@ -1395,7 +1343,7 @@ section#resume {
 }
 
 .timeline-content li::before {
-  content: '→';
+  content: '-';
   color: var(--accent-color);
   position: absolute;
   left: -1.2rem;
@@ -1407,7 +1355,6 @@ section#resume {
     --container-width: 85%;
     --section-padding: 2rem;
     --timeline-content-width: 45%;
-    --marquee-height: 12vh;
   }
 
   .about-container {
@@ -1535,7 +1482,6 @@ section#resume {
     --container-width: 100%;
     --section-padding: 3rem;
     --timeline-content-width: 40%;
-    --marquee-height: 10vh;
   }
 
   .description h1 {
