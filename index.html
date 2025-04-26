@@ -4,6 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Alex Okhitoya - Full Stack Developer specializing in creating scalable and user-friendly web applications. View my portfolio of projects and professional experience.">
+  <meta name="keywords" content="Full Stack Developer, Web Development, JavaScript, React, Node.js, Portfolio">
+  <meta name="author" content="Alex Okhitoya">
+  <meta property="og:title" content="Lexman | Full Stack Developer Portfolio">
+  <meta property="og:description"
+    content="Portfolio showcasing web development projects and professional experience of Alex Okhitoya, a Full Stack Developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lexmanthefirst.github.io">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@lexmanthefirst">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -39,36 +50,19 @@
             <a href="#projects" class="nav_text">Projects</a>
           </li>
           <li id="nav-4" class="slide-out-4 nav">
-            <div class="social-icons">
-              <a href="https://github.com/lexmanthefirst" rel="noopener noreferrer" target="_blank" aria-label="GitHub">
+            <a href="#contact" class="nav_text">Contact</a>
+          <li id="nav-5" class="slide-out-5 nav">
+            <div class="theme-toggle">
+              <button id="theme-btn" aria-label="Toggle theme" title="Toggle theme" type="button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-github">
-                  <path
-                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-                  <path d="M9 18c-4.51 2-5-2-7-2" />
+                  class="lucide lucide-moon">
+                  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
                 </svg>
-              </a>
-              <a href="https://x.com/lexmanthefirst" rel="noopener noreferrer" target="_blank" aria-label="Twitter">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="24"
-                  width="24" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
-                  </path>
-                </svg>
-              </a>
-              <a href="https://linkedin.com/in/okhitoya-alex" rel="noopener noreferrer" target="_blank"
-                aria-label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-linkedin">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect width="4" height="12" x="2" y="9" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
-              </a>
+              </button>
             </div>
           </li>
+
         </ul>
       </nav>
     </div>
@@ -79,16 +73,15 @@
     <section id="about" class="about-container">
       <div class="message">
         <div class="description">
-          <h1>
-            Full-stack
-            <br />
-            Developer
-          </h1>
+          <h1>Full Stack Developer</h1>
           <p>
-            Hi there! My name is Alex, and I create quick, scalable, and
-            user-friendly web apps, from backend performance to frontend
-            engagement.
+            Hi there! I'm Alex, a passionate Full Stack Developer specializing in creating quick, scalable, and
+            user-friendly web applications. From backend performance to frontend engagement, I bring ideas to life.
           </p>
+          <div class="cta-buttons">
+            <a href="#projects" class="cta-primary">View My Work</a>
+            <a href="#contact" class="cta-secondary">Let's Connect</a>
+          </div>
         </div>
         <div class="img-container">
           <picture>
@@ -102,159 +95,143 @@
       </div>
     </section>
     <section id="resume" class="resume">
-      <h1>Resume</h1>
+      <h2>Professional Journey</h2>
       <div class="tech-stack-wrapper">
         <div class="btn-container">
-          <button class="btn education" data-id="education">Education</button>
-          <button class="btn tech" data-id="tech">Tech</button>
-          <button class="btn experience" data-id="experience">
-            Experience
-          </button>
+          <button class="btn active" data-id="education">Education</button>
+          <button class="btn" data-id="tech">Skills</button>
+          <button class="btn" data-id="experience">Experience</button>
         </div>
         <div class="tech-stack-container">
           <div class="content active" id="education">
-            <h1>Educational Qualification</h1>
+            <h3 class="section-title">Educational Background</h3>
             <div class="timeline">
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
+                <div class="timeline-date">2023 - Present</div>
                 <div class="timeline-content">
-                  <h3>Software Developer</h3>
-                  <p class="institution">Bringham Young University - Idaho (2026) Current</p>
-                  <p class="degree">Bachelor of Science(BSc)</p>
-                  <p class="description">
-                    The Bachelor of Science in Software Development at Brigham Young University-Idaho emphasizes
-                    theoretical foundations and practical applications. The curriculum covers computer programming, web
-                    development, software testing, and industry-standard coding practices.
-                  </p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                  <h3>BYU Pathway Connect</h3>
-                  <p class="institution">BYU Pathway Worldwide (2023)</p>
-                  <p class="degree">Certification</p>
-                  <p class="description">
-                    This program exposed me to the foundational courses in life skills, math, and writing, preparing me
-                    for advanced studies in software development.
-                  </p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                  <h3>Environmental Management and Toxicology</h3>
-                  <p class="institution">University of Benin - Benin City (2022)</p>
-                  <p class="degree">Bachelor of Science(BSc)</p>
-                  <p class="description">
-                    This program helped me develop research skills, critical thinking, and analytical abilities. I
-                    learned
-                    about environmental policies, regulations, and the impact of human activities on ecosystems. The
-                    curriculum included courses in environmental science, toxicology, and risk assessment.
-                  </p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="content" id="tech">
-            <h1>Tech Stack</h1>
-            <div class="marquee">
-              <ul class="marquee-content">
-                <li><i class="fab fa-github"></i></li>
-                <li><i class="fab fa-html5"></i></li>
-                <li><i class="fab fa-css3-alt"></i></li>
-                <li><i class="fab fa-js"></i></li>
-                <li><i class="fab fa-react"></i></li>
-                <li><i class="fab fa-node-js"></i></li>
-                <li><i class="fab fa-npm"></i></li>
-                <li><i class="fab fa-git-alt"></i></li>
-                <li><i class="fab fa-docker"></i></li>
-                <li><i class="fab fa-aws"></i></li>
-                <li><i class="fab fa-python"></i></li>
-                <li><i class="fab fa-wordpress"></i></li>
-              </ul>
-            </div>
-            <!-- <div class="tech-grid">
-              <div class="tech-item">
-                <h3>Frontend</h3>
-                <ul>
-                  <li>React.js</li>
-                  <li>HTML5 & CSS3</li>
-                  <li>JavaScript (ES6+)</li>
-                  <li>Responsive Design</li>
-                </ul>
-              </div>
-              <div class="tech-item">
-                <h3>Backend</h3>
-                <ul>
-                  <li>Node.js</li>
-                  <li>Express.js</li>
-                  <li>MongoDB</li>
-                  <li>RESTful APIs</li>
-                </ul>
-              </div>
-              <div class="tech-item">
-                <h3>Tools & Others</h3>
-                <ul>
-                  <li>Git & GitHub</li>
-                  <li>npm/pnpm</li>
-                  <li>VS Code</li>
-                  <li>Postman</li>
-                </ul>
-              </div>
-            </div> -->
-          </div>
-          <div class="content" id="experience">
-            <h1>Experience</h1>
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                  <h3>Full Stack Developer</h3>
-                  <p class="company">CSE Motors Team Project</p>
-                  <p class="date">2025</p>
-                  <p>
-                    Collaborated with a team of developers to design and implement a full-stack web application for
-                    managing vehicle
-                    listings, reviews, and user interactions. Utilized HTML, CSS, and EJS for the frontend, and Node.js
-                    with PostgreSQL for
-                    the backend.
-                  </p>
-                  <ul>
-                    <li>Applied MVC structure and modular design</li>
-                    <li>Implemented CI/CD pipelines</li>
-                    <li>Collaborated using GitHub and Trello to build the CSE Motors website</li>
+                  <h4>Software Development</h4>
+                  <p class="institution">Brigham Young University - Idaho</p>
+                  <p class="degree">Bachelor of Science (BSc)</p>
+                  <ul class="education-highlights">
+                    <li>Focus on full-stack development and software engineering principles</li>
+                    <li>Key courses: Web Development, Data Structures, Algorithms</li>
+                    <li>Expected graduation: 2026</li>
                   </ul>
                 </div>
               </div>
               <div class="timeline-item">
                 <div class="timeline-dot"></div>
+                <div class="timeline-date">2023</div>
                 <div class="timeline-content">
-                  <h3>Science Teacher</h3>
-                  <p class="company">National Youth Service Corps</p>
-                  <p class="date">2023 - 2024</p>
-                  <p>
-                    Implemented engaging science curriculum for secondary school students, fostering a
-                    passion for learning and critical thinking.
-                  </p>
-                  <ul>
-                    <li>Managed student data and engagement for over 100 students</li>
-                    <li>Organized and delivered complex information effectively</li>
-                    <li>Coordinated extracurricular projects, demonstrating leadership and time management</li>
+                  <h4>BYU Pathway Connect</h4>
+                  <p class="institution">BYU Pathway Worldwide</p>
+                  <p class="degree">Certification</p>
+                  <ul class="education-highlights">
+                    <li>Foundation in mathematics and professional writing</li>
+                    <li>Developed critical thinking and problem-solving skills</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2022</div>
+                <div class="timeline-content">
+                  <h4>Environmental Management</h4>
+                  <p class="institution">University of Benin</p>
+                  <p class="degree">Bachelor of Science (BSc)</p>
+                  <ul class="education-highlights">
+                    <li>Research methodology and analytical skills</li>
+                    <li>Project management and environmental assessment</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content" id="tech">
+            <h3 class="section-title">Technical Expertise</h3>
+            <div class="skills-grid">
+              <div class="skill-category">
+                <h4>Frontend Development</h4>
+                <div class="skill-items">
+                  <div class="skill-item" data-skill="HTML5">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
+                  </div>
+                  <div class="skill-item" data-skill="CSS3">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
+                  </div>
+                  <div class="skill-item" data-skill="JavaScript">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                  </div>
+                  <div class="skill-item" data-skill="React">
+                    <i class="fab fa-react"></i>
+                    <span>React</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-category">
+                <h4>Backend Development</h4>
+                <div class="skill-items">
+                  <div class="skill-item" data-skill="Node.js">
+                    <i class="fab fa-node-js"></i>
+                    <span>Node.js</span>
+                  </div>
+                  <div class="skill-item" data-skill="Python">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                  </div>
+                </div>
+              </div>
+              <div class="skill-category">
+                <h4>Tools & Technologies</h4>
+                <div class="skill-items">
+                  <div class="skill-item" data-skill="Git">
+                    <i class="fab fa-git-alt"></i>
+                    <span>Git</span>
+                  </div>
+                  <div class="skill-item" data-skill="GitHub">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                  </div>
+                  <div class="skill-item" data-skill="Docker">
+                    <i class="fab fa-docker"></i>
+                    <span>Docker</span>
+                  </div>
+                  <div class="skill-item" data-skill="AWS">
+                    <i class="fab fa-aws"></i>
+                    <span>AWS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content" id="experience">
+            <h3 class="section-title">Work Experience</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2023 - Present</div>
+                <div class="timeline-content">
+                  <h4>Freelance Web Developer</h4>
+                  <p class="company">Self-employed</p>
+                  <ul class="experience-highlights">
+                    <li>Developed responsive websites for small businesses</li>
+                    <li>Implemented modern UI/UX design principles</li>
+                    <li>Managed client relationships and project timelines</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-      </div>
       </div>
     </section>
     <section id="projects">
       <div class="projects-container">
-        <h2>Projects</h2>
+        <h2>Featured Projects</h2>
         <div class="carousel">
           <div class="carousel-track">
             <!-- Project 1 -->
@@ -381,9 +358,33 @@
       <div class="footer-section">
         <h3>Social</h3>
         <div class="footer-social-icons">
-          <a href="https://github.com/lexmanthefirst" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://linkedin.com/in/okhitoya-alex" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://x.com/lexmanthefirst" target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a href="https://github.com/lexmanthefirst" rel="noopener noreferrer" target="_blank" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-github">
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+              <path d="M9 18c-4.51 2-5-2-7-2" />
+            </svg>
+          </a>
+          <a href="https://x.com/lexmanthefirst" rel="noopener noreferrer" target="_blank" aria-label="Twitter">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="24" width="24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+              </path>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/okhitoya-alex" rel="noopener noreferrer" target="_blank"
+            aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-linkedin">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect width="4" height="12" x="2" y="9" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
         </div>
       </div>
       <div class="footer-section">
@@ -403,21 +404,23 @@
     </div>
   </footer>
 
-  <div class="theme-toggle">
-    <button id="theme-btn" aria-label="Toggle theme" title="Toggle theme" type="button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-        class="lucide lucide-moon">
-        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-      </svg>
-    </button>
-  </div>
+
   <button class="arrow-up" aria-label="Scroll to top" type="button">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2">
       <path d="M12 19V5M5 12l7-7 7 7" />
     </svg>
   </button>
+  <!-- <div class="button-wrapper ">
+
+    <button class="btn-3" type="button" title="Scroll to top">
+      <svg class="svgIcon" viewBox="0 0 384 512">
+        <path
+          d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z">
+        </path>
+      </svg>
+    </button>
+  </div> -->
 </body>
 
 </html>

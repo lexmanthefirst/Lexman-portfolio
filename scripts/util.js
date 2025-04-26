@@ -9,7 +9,7 @@ const nav3 = document.getElementById('nav-3');
 const nav4 = document.getElementById('nav-4');
 const nav5 = document.getElementById('nav-5');
 const nav = document.querySelectorAll('.nav_text');
-const navItems = [nav1, nav2, nav3, nav4];
+const navItems = [nav1, nav2, nav3, nav4, nav5];
 const navArr = Array.from(nav);
 const header = document.getElementById('nav-container');
 const headerHeight = header.clientHeight;
@@ -262,7 +262,6 @@ resumeWrapper.addEventListener('click', function (e) {
 const initMarquee = () => {
   const root = document.documentElement;
   const marqueeContent = document.querySelector('ul.marquee-content');
-
   if (marqueeContent) {
     const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
       '--marquee-elements-displayed',
